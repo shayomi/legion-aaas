@@ -9,7 +9,9 @@ export default function MarketingLayout({
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-700">
+        {children}
+      </main>
       <SiteFooter />
     </div>
   );

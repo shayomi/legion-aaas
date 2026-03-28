@@ -12,6 +12,7 @@ import {
   Repeat2,
   Puzzle,
 } from "lucide-react";
+import { Reveal } from "@/components/motion/reveal";
 
 const features = [
   {
@@ -107,7 +108,7 @@ export function FeaturesGrid() {
   return (
     <section className="py-24 relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <Reveal className="text-center mb-16" y="sm">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Everything your team needs.{" "}
             <span className="text-primary">Nothing you don&apos;t.</span>
@@ -116,13 +117,14 @@ export function FeaturesGrid() {
             Built for teams that want a local-first agent with a real hosted control plane,
             not just a one-shot CLI script.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {features.map((f) => (
-            <div
+          {features.map((f, index) => (
+            <Reveal
               key={f.title}
-              className="relative group rounded-xl border border-border bg-card p-6 hover:border-primary/40 transition-all duration-200"
+              delayMs={index * 45}
+              className="relative group rounded-xl border border-border bg-card p-6 hover:border-primary/40 hover-lift sheen-surface"
             >
               {f.soon && (
                 <span className="absolute top-4 right-4 text-xs bg-muted text-muted-foreground px-2 py-0.5 rounded-full border border-border">
@@ -134,7 +136,7 @@ export function FeaturesGrid() {
               </div>
               <h3 className="font-semibold mb-2">{f.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

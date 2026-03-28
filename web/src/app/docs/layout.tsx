@@ -42,7 +42,7 @@ export default function DocsLayout({
 
         {/* Main content */}
         <main className="flex-1 min-w-0">
-          <div className="mx-auto max-w-3xl px-6 py-10">
+          <div className="mx-auto max-w-3xl px-6 py-10 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:duration-500">
             {children}
           </div>
         </main>

@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/motion/reveal";
+
 const integrations = [
   { name: "GitHub", emoji: "🐙" },
   { name: "Slack", emoji: "💬" },
@@ -22,14 +24,12 @@ const doubled = [...integrations, ...integrations];
 export function IntegrationsStrip() {
   return (
     <section className="py-20 border-t border-border overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-10 text-center">
-        <h2 className="text-2xl font-bold mb-2">
-          Connects to your whole organisation
-        </h2>
+      <Reveal className="mx-auto mb-10 max-w-7xl px-4 text-center sm:px-6 lg:px-8" y="sm">
+        <h2 className="mb-2 text-2xl font-bold">Connects to your whole organisation</h2>
         <p className="text-muted-foreground">
           Integrations for every part of your workflow — more being added weekly.
         </p>
-      </div>
+      </Reveal>
 
       {/* Row 1 */}
       <div className="relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
@@ -37,7 +37,7 @@ export function IntegrationsStrip() {
           {doubled.map((item, i) => (
             <div
               key={i}
-              className="flex items-center gap-2.5 shrink-0 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium whitespace-nowrap"
+              className="flex items-center gap-2.5 shrink-0 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium whitespace-nowrap transition-transform duration-300 hover:-translate-y-1"
             >
               <span className="text-lg">{item.emoji}</span>
               {item.name}
@@ -52,7 +52,7 @@ export function IntegrationsStrip() {
           {[...doubled].reverse().map((item, i) => (
             <div
               key={i}
-              className="flex items-center gap-2.5 shrink-0 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium whitespace-nowrap opacity-60"
+              className="flex items-center gap-2.5 shrink-0 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium whitespace-nowrap opacity-60 transition-transform duration-300 hover:-translate-y-1"
             >
               <span className="text-lg">{item.emoji}</span>
               {item.name}
