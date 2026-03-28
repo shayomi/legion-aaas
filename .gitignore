@@ -12,7 +12,7 @@ wheels/
 # Local agent state and generated outputs
 .aaas_memory/
 .claude/
-skills/
+/skills/
 .legion/
 legion.md
 primer.md
