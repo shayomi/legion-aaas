@@ -24,6 +24,10 @@ export const navConfig: { items: NavItem[] } = {
       href: "/docs/configuration",
     },
     {
+      title: "Control Plane",
+      href: "/docs/control-plane",
+    },
+    {
       title: "Integrations",
       href: "/docs/integrations",
       items: [

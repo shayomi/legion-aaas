@@ -26,6 +26,7 @@ export function SiteFooter() {
             <p className="text-sm font-semibold">Documentation</p>
             {[
               { href: "/docs/getting-started", label: "Getting Started" },
+              { href: "/docs/control-plane", label: "Control Plane" },
               { href: "/docs/how-it-works", label: "How It Works" },
               { href: "/docs/skills", label: "Skills System" },
               { href: "/docs/integrations", label: "Integrations" },
@@ -45,9 +46,9 @@ export function SiteFooter() {
           <div className="flex flex-col gap-3">
             <p className="text-sm font-semibold">Community</p>
             {[
-              { href: "https://github.com/yourusername/aaas", label: "GitHub" },
-              { href: "https://github.com/yourusername/aaas/issues", label: "Report a Bug" },
-              { href: "https://github.com/yourusername/aaas/discussions", label: "Discussions" },
+              { href: "https://github.com/shayomi/legion-aaas", label: "GitHub" },
+              { href: "https://github.com/shayomi/legion-aaas/issues", label: "Report a Bug" },
+              { href: "https://github.com/shayomi/legion-aaas/discussions", label: "Discussions" },
             ].map((link) => (
               <Link
                 key={link.href}

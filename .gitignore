@@ -13,3 +13,12 @@ wheels/
 .aaas_memory/
 .claude/
 skills/
+.legion/
+legion.md
+primer.md
+brainstorm.md
+prd.md
+design_spec.md
+technical_spec.md
+build_e2e.md
+github_issue.md

@@ -14,7 +14,7 @@ const steps = [
     number: "02",
     icon: Sparkles,
     title: "It reads & learns",
-    desc: "Files are chunked into semantic memory. The LLM analyses your stack, finds gaps, writes a skill file.",
+    desc: "Files are chunked into memory. AAAS analyses the stack, writes legion.md, and updates primer.md for the next run.",
     color: "text-violet-400",
     border: "border-violet-400/30",
     bg: "bg-violet-400/5",
@@ -31,8 +31,8 @@ const steps = [
   {
     number: "04",
     icon: Zap,
-    title: "It automates tasks",
-    desc: "Creates GitHub issues, plans sprints, connects integrations, and writes new skills to keep going.",
+    title: "It installs packs & workflows",
+    desc: "AAAS recommends packs like Next.js, Tailwind, Supabase, Neon, and GitHub workflows, then syncs local state with the hosted control plane.",
     color: "text-orange-400",
     border: "border-orange-400/30",
     bg: "bg-orange-400/5",
@@ -46,7 +46,7 @@ export function HowItWorks() {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">How it works</h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            From zero to a fully operational AI agent in under 5 minutes.
+            From zero to a repo-aware local agent plus hosted control plane in under 5 minutes.
           </p>
         </div>
 

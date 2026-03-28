@@ -46,8 +46,8 @@ export default function GettingStartedPage() {
         <Badge variant="outline" className="mb-4 border-primary/30 text-primary">Getting Started</Badge>
         <h1 className="text-4xl font-bold mb-3">Install AAAS in 5 minutes</h1>
         <p className="text-lg text-muted-foreground">
-          From zero to a running AI agent that understands your codebase,
-          finds gaps, and creates GitHub issues automatically.
+          From zero to a hybrid AAAS setup: local repo intelligence,
+          rolling memory, installable packs, workflow docs, and a hosted control plane.
         </p>
       </div>
 
@@ -97,24 +97,39 @@ uv sync`}</Code>
 # Or analyse this folder itself:
 uv run agent.py .`}</Code>
           <p className="text-sm text-muted-foreground">
-            In ~30 seconds you&apos;ll see a <code className="bg-muted px-1 py-0.5 rounded text-xs">skills/system-overview.md</code> appear.
-            That&apos;s the agent&apos;s first brain dump — tech stack, gaps, and a prioritised backlog.
+            In ~30 seconds you&apos;ll see <code className="bg-muted px-1 py-0.5 rounded text-xs">legion.md</code>,
+            <code className="bg-muted px-1 py-0.5 rounded text-xs">primer.md</code>,
+            <code className="bg-muted px-1 py-0.5 rounded text-xs">.legion/config.json</code>,
+            and starter workflow docs appear.
           </p>
         </Step>
 
-        <Step n={5} title="Chat with your project">
+        <Step n={5} title="Review packs and config">
+          <Code>{`# Optional: override automatic pack selection
+AAAS_PACKS=nextjs,react,tailwind,shadcn,supabase
+
+# Optional: switch provider later
+AI_PROVIDER=claude`}</Code>
+          <p className="text-sm text-muted-foreground">
+            AAAS auto-detects packs from the repo, but you can pin them with
+            <code className="bg-muted px-1 py-0.5 rounded text-xs">AAAS_PACKS</code>.
+            Installed pack manifests are written under <code className="bg-muted px-1 py-0.5 rounded text-xs">.legion/packs/</code>.
+          </p>
+        </Step>
+
+        <Step n={6} title="Chat with your project">
           <Code>{`uv run chat.py`}</Code>
           <p className="text-sm text-muted-foreground">
-            Ask anything: <em>&ldquo;What&apos;s broken?&rdquo;</em>, <em>&ldquo;How do I add auth?&rdquo;</em>,
-            <em>&ldquo;What does the payments module do?&rdquo;</em>
+            Ask anything: <em>&ldquo;What&apos;s broken?&rdquo;</em>, <em>&ldquo;What packs are installed?&rdquo;</em>,
+            <em>&ldquo;How do I add auth?&rdquo;</em>, <em>&ldquo;What changed yesterday?&rdquo;</em>
           </p>
         </Step>
       </div>
 
       <div className="pt-8 border-t border-border">
-        <h2 className="text-xl font-bold mb-4">Optional: GitHub integration</h2>
+        <h2 className="text-xl font-bold mb-4">Optional: GitHub + hybrid sync</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          Connect your GitHub repo to automatically create issues from the backlog analysis.
+          Connect GitHub for issue workflows and add hosted control-plane sync metadata.
         </p>
         <Code>{`# 1. Copy the config template
 cp .env.example .env
@@ -126,16 +141,25 @@ cp .env.example .env
 # 3. Get a token at: github.com/settings/tokens
 #    Scopes needed: repo, workflow
 
-# 4. Run with --github flag
+# 4. Optional hosted sync metadata
+#    AAAS_SYNC_MODE=hybrid
+#    AAAS_CLOUD_URL=https://your-aaas-app.vercel.app
+#    AAAS_PROJECT_ID=proj_123
+
+# 5. Run with --github flag
 uv run agent.py /path/to/project --github`}</Code>
         <Callout type="tip">
-          The agent will create labelled issues for every backlog item it finds, tagged <code className="bg-muted px-1 py-0.5 rounded text-xs">aaas-generated</code>.
+          The local runtime owns repo artifacts; the hosted control plane owns project settings,
+          provider selection, and future team sync.
         </Callout>
       </div>
 
       <div className="pt-4 flex gap-4">
         <a href="/docs/how-it-works" className="text-primary text-sm hover:underline">
           How it works →
+        </a>
+        <a href="/docs/control-plane" className="text-primary text-sm hover:underline">
+          Control plane →
         </a>
         <a href="/docs/skills" className="text-primary text-sm hover:underline">
           Skills system →
