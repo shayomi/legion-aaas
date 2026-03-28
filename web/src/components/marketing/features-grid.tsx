@@ -30,29 +30,29 @@ const features = [
   },
   {
     icon: FileCode2,
-    title: "Skills system",
-    desc: "Every insight is a markdown skill file. The agent reads, writes, and chains skills — so knowledge compounds over time.",
+    title: "Repo-owned artifacts",
+    desc: "AAAS writes legion.md for architecture intelligence and primer.md for rolling operational memory directly into the repo.",
     color: "text-emerald-400",
     bg: "bg-emerald-400/10",
   },
   {
     icon: GitBranch,
     title: "Deep GitHub integration",
-    desc: "Creates issues from backlog analysis, manages Kanban boards, triggers Actions, reviews PRs — all automatically.",
+    desc: "Creates issue drafts, stores repo config in .legion/config.json, and prepares future workflow automation and SaaS sync.",
     color: "text-orange-400",
     bg: "bg-orange-400/10",
   },
   {
     icon: Cpu,
-    title: "Runs 100% locally",
-    desc: "Powered by Ollama + Mistral on your own machine. No OpenAI API key. No cloud fees. No data leaving your network.",
+    title: "Provider-flexible runtime",
+    desc: "Start with Ollama locally today, then switch per project to Claude, OpenCode, or OpenAI-compatible providers as AAAS grows.",
     color: "text-pink-400",
     bg: "bg-pink-400/10",
   },
   {
     icon: Workflow,
-    title: "n8n automation workflows",
-    desc: "Visual drag-and-drop automations connect the agent to any service — Slack, email, webhooks, databases, and more.",
+    title: "Pack registry + workflows",
+    desc: "Installable packs cover frontend, database, auth, AI, payments, testing, storage, and infra, with workflow docs generated on first run.",
     color: "text-yellow-400",
     bg: "bg-yellow-400/10",
   },
@@ -88,8 +88,8 @@ const features = [
   },
   {
     icon: Repeat2,
-    title: "Self-improving loops",
-    desc: "Every task it runs teaches it something new. Skills build on each other — the longer it runs, the smarter it gets.",
+    title: "Hybrid memory sync",
+    desc: "The repo keeps local artifacts while the hosted control plane will manage projects, providers, packs, run history, and shared team context.",
     color: "text-indigo-400",
     bg: "bg-indigo-400/10",
   },
@@ -113,8 +113,8 @@ export function FeaturesGrid() {
             <span className="text-primary">Nothing you don&apos;t.</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Built for SMEs that want the power of a full DevOps team
-            without the headcount. All open source, all local, all free.
+            Built for teams that want a local-first agent with a real hosted control plane,
+            not just a one-shot CLI script.
           </p>
         </div>
 

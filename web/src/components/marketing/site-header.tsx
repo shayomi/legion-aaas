@@ -9,6 +9,7 @@ import { Menu, Zap } from "lucide-react";
 
 const navLinks = [
   { href: "/docs/getting-started", label: "Docs" },
+  { href: "/control-plane", label: "Control Plane" },
   { href: "/docs/integrations", label: "Integrations" },
   { href: "/docs/skills", label: "Skills" },
 ];
@@ -56,7 +57,7 @@ export function SiteHeader() {
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-3">
           <Link
-            href="https://github.com/yourusername/aaas"
+            href="https://github.com/shayomi/legion-aaas"
             target="_blank"
             rel="noopener noreferrer"
             className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
@@ -67,10 +68,10 @@ export function SiteHeader() {
             GitHub
           </Link>
           <Link
-            href="/docs/getting-started"
+            href="/control-plane"
             className={cn(buttonVariants({ size: "sm" }))}
           >
-            Get Started
+            Control Plane
           </Link>
         </div>
 
@@ -90,8 +91,8 @@ export function SiteHeader() {
                   {link.label}
                 </Link>
               ))}
-              <Link href="/docs/getting-started" className={cn(buttonVariants())}>
-                Get Started
+              <Link href="/control-plane" className={cn(buttonVariants())}>
+                Control Plane
               </Link>
             </div>
           </SheetContent>

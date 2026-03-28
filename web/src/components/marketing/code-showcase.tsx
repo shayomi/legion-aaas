@@ -13,8 +13,8 @@ const tabs = [
 ollama pull mistral
 
 # 2. Clone AAAS
-git clone https://github.com/yourusername/aaas
-cd aaas
+git clone https://github.com/shayomi/legion-aaas
+cd legion-aaas
 
 # 3. Install Python deps (uv handles everything)
 curl -Lsf https://astral.sh/uv/install.sh | sh
@@ -30,7 +30,8 @@ uv run agent.py /path/to/your/project
 # It will:
 #  ✓ Read all files (code, docs, configs)
 #  ✓ Store in local vector memory
-#  ✓ Write skills/system-overview.md
+#  ✓ Write legion.md and primer.md
+#  ✓ Create .legion/config.json and pack manifests
 
 # With GitHub integration (add token to .env first)
 uv run agent.py /path/to/project --github
@@ -44,8 +45,8 @@ uv run agent.py /path/to/project --github
     code: `uv run chat.py
 
 # AAAS Chat
-# Commands: 'skills' | 'quit'
-# Loaded skills: system-overview
+# Commands: 'skills' | 'packs' | 'quit'
+# Loaded local artifacts: legion.md, primer.md
 
 You: what's broken in this project?
 
@@ -63,26 +64,23 @@ GitHub issues #12-#15 have been created for these.`,
     label: "Skill file",
     lang: "markdown",
     code: `# Skill: System Overview
-_Last updated: 2025-03-26_
+# Legion
+_Last updated: 2026-03-28_
 
-## What this project does
-A SaaS invoicing app built with Next.js and FastAPI.
-Users create invoices, send via email, and track payments.
+## What this repo is
+Hybrid AAAS runtime plus hosted control plane starter.
 
-## Tech stack
-- Frontend: Next.js 14, Tailwind, shadcn/ui
-- Backend: FastAPI, PostgreSQL, Redis
-- Auth: Clerk
+## Recommended packs
+- nextjs
+- react
+- tailwind
+- shadcn
+- supabase
 
-## Gaps & problems identified
-- No rate limiting on auth endpoints
-- Missing test coverage on payment flow
-- README is 6 months out of date
-
-## Backlog (suggested next tasks)
-1. Add rate limiting middleware
-2. Write tests for /api/payments
-3. Update README with new env vars`,
+## Next best actions
+1. Add provider adapters
+2. Add SaaS project dashboard
+3. Add GitHub issue automation`,
   },
 ];
 
@@ -106,7 +104,7 @@ export function CodeShowcase() {
             Simple to use. Powerful to own.
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            One command to start. No config files, no dashboards, no lock-in.
+            One command to start, then grow into packs, artifacts, and a hosted control plane.
           </p>
         </div>
 

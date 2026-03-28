@@ -24,7 +24,7 @@ export default function DocsLayout({
           </Link>
         </div>
         <Link
-          href="https://github.com/yourusername/aaas"
+          href="https://github.com/shayomi/legion-aaas"
           target="_blank"
           rel="noopener noreferrer"
           className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}

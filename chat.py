@@ -11,20 +11,28 @@ Type 'quit' to exit.
 
 import os
 import sys
+from pathlib import Path
 from dotenv import load_dotenv
 from rich.console import Console
 from rich.panel import Panel
-from rich.markdown import Markdown
 
 load_dotenv()
 
 from aaas import memory, llm, skills
+from aaas.artifacts import LEGION_FILE, PRIMER_FILE
+from aaas.packs import list_packs
+from aaas.project_config import read_project_config
+from aaas.providers import provider_ready
 
 console = Console()
 
 
 def chat_prompt(question: str, context_chunks: list[str]) -> str:
-    context = "\n\n---\n\n".join(context_chunks) if context_chunks else "No project loaded yet."
+    context = (
+        "\n\n---\n\n".join(context_chunks)
+        if context_chunks
+        else "No project loaded yet."
+    )
     return f"""You are AAAS, an expert agent that knows this project inside out.
 Answer the user's question using only the project context below.
 Be specific, cite file names, and be honest if something is unclear.
@@ -38,15 +46,18 @@ Answer:"""
 
 
 def main():
-    console.print(Panel.fit(
-        "[bold cyan]AAAS Chat[/bold cyan]\n"
-        "[dim]Ask anything about your project.[/dim]\n"
-        "[dim]Commands: 'skills' | 'quit'[/dim]",
-        border_style="cyan",
-    ))
+    console.print(
+        Panel.fit(
+            "[bold cyan]AAAS Chat[/bold cyan]\n"
+            "[dim]Ask anything about your project.[/dim]\n"
+            "[dim]Commands: 'skills' | 'packs' | 'quit'[/dim]",
+            border_style="cyan",
+        )
+    )
 
-    if not llm.is_ollama_running():
-        console.print("[red]Ollama is not running. Run 'ollama pull mistral' first.[/red]")
+    ready, message = provider_ready()
+    if not ready:
+        console.print(f"[red]{message}[/red]")
         sys.exit(1)
 
     skill_list = skills.list_skills()
@@ -80,11 +91,28 @@ def main():
                     console.print(f"  [green]•[/green] {name}")
             continue
 
+        if question.lower() == "packs":
+            for pack in list_packs():
+                console.print(
+                    f"  [green]•[/green] {pack.name} ({pack.category}) - {pack.summary}"
+                )
+            continue
+
         # Search memory for relevant context
         chunks = memory.query(question, n=5)
 
         # Also include any existing skill files as context
         skill_context = []
+        project_config = read_project_config()
+        if project_config:
+            skill_context.append(f"[Project Config]\n{project_config}")
+        for artifact_name in (LEGION_FILE, PRIMER_FILE):
+            artifact_path = Path(artifact_name)
+            if artifact_path.exists():
+                artifact_text = artifact_path.read_text(encoding="utf-8")
+                skill_context.append(
+                    f"[Artifact: {artifact_name}]\n{artifact_text[:2000]}"
+                )
         for name in skills.list_skills():
             content = skills.read_skill(name)
             if content:

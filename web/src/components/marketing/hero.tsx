@@ -20,16 +20,14 @@ export function Hero() {
             </Badge>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-              Your AI DevOps agent.{" "}
-              <span className="text-primary">No subscription</span>{" "}
-              required.
+              Your hybrid AI build agent.{" "}
+              <span className="text-primary">Local runtime, hosted control plane</span>.
             </h1>
 
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              AAAS plugs into any codebase, reads your entire project,
-              finds gaps, creates GitHub issues, manages sprints,
-              connects Google Meet, Slack, CI/CD — and writes skills
-              to automate everything it learns.
+              AAAS plugs into any codebase, learns it, writes `legion.md`
+              and `primer.md`, installs stack-specific packs, and lets teams
+              manage providers, projects, and GitHub workflows from a hosted control plane.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
@@ -41,10 +39,16 @@ export function Hero() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <Link
-                href="https://github.com/yourusername/aaas"
+                href="/control-plane"
+                className={cn(buttonVariants({ size: "lg", variant: "outline" }))}
+              >
+                Explore Control Plane
+              </Link>
+              <Link
+                href="https://github.com/shayomi/legion-aaas"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={cn(buttonVariants({ size: "lg", variant: "outline" }))}
+                className={cn(buttonVariants({ size: "lg", variant: "ghost" }))}
               >
                 <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
@@ -55,9 +59,9 @@ export function Hero() {
 
             <div className="flex gap-8 pt-4 border-t border-border">
               {[
-                { label: "Open source", value: "100%" },
-                { label: "API cost", value: "$0" },
-                { label: "Integrations", value: "10+" },
+                { label: "Artifacts", value: "2" },
+                { label: "Pack catalog", value: "40+" },
+                { label: "Providers", value: "4" },
                 { label: "Setup time", value: "5 min" },
               ].map((stat) => (
                 <div key={stat.label}>
