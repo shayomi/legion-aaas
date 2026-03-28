@@ -34,11 +34,11 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 font-bold text-lg">
-          <div className="flex h-7 w-7 items-center justify-center rounded bg-primary text-primary-foreground">
+        <Link href="/" className="group flex items-center gap-2 font-bold text-lg">
+          <div className="flex h-7 w-7 items-center justify-center rounded bg-primary text-primary-foreground transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
             <Zap className="h-4 w-4" />
           </div>
-          <span className="text-primary">AAAS</span>
+          <span className="text-primary transition-transform duration-300 group-hover:translate-x-0.5">AAAS</span>
         </Link>
 
         {/* Desktop nav */}
@@ -47,7 +47,7 @@ export function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-muted-foreground hover:text-foreground transition-[color,transform] duration-200 hover:-translate-y-0.5"
             >
               {link.label}
             </Link>

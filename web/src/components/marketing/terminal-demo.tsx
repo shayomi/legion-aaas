@@ -64,9 +64,17 @@ export function TerminalDemo() {
       </div>
 
       {/* Terminal output */}
-      <div className="p-5 font-mono text-sm leading-relaxed min-h-[400px]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_hsl(var(--primary)/0.11),_transparent_42%)] pointer-events-none" />
+      <div className="relative p-5 font-mono text-sm leading-relaxed min-h-[400px]">
         {LINES.slice(0, visible).map((line, i) => (
-          <div key={i} className={cn(lineClass[line.type] || "text-foreground")}>
+          <div
+            key={i}
+            className={cn(
+              lineClass[line.type] || "text-foreground",
+              "transition-[opacity,transform] duration-500",
+              line.type !== "blank" && "animate-in fade-in slide-in-from-bottom-1"
+            )}
+          >
             {line.text || "\u00A0"}
           </div>
         ))}

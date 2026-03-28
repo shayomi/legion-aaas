@@ -1,4 +1,5 @@
 import { FolderOpen, Sparkles, MessageSquare, Zap } from "lucide-react";
+import { Reveal } from "@/components/motion/reveal";
 
 const steps = [
   {
@@ -43,21 +44,22 @@ export function HowItWorks() {
   return (
     <section className="py-24 border-t border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <Reveal className="text-center mb-16" y="sm">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">How it works</h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
             From zero to a repo-aware local agent plus hosted control plane in under 5 minutes.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
           {/* Connector line on desktop */}
           <div className="hidden lg:block absolute top-[3.5rem] left-[calc(12.5%+2rem)] right-[calc(12.5%+2rem)] h-px bg-gradient-to-r from-cyan-400/30 via-violet-400/30 via-emerald-400/30 to-orange-400/30" />
 
           {steps.map((step, i) => (
-            <div
+            <Reveal
               key={i}
-              className={`relative flex flex-col gap-4 rounded-xl border ${step.border} ${step.bg} p-6`}
+              delayMs={i * 90}
+              className={`relative flex flex-col gap-4 rounded-xl border ${step.border} ${step.bg} p-6 hover-lift sheen-surface`}
             >
               <div className="flex items-center justify-between">
                 <div className={`inline-flex h-10 w-10 items-center justify-center rounded-lg border ${step.border} bg-background`}>
@@ -69,7 +71,7 @@ export function HowItWorks() {
               </div>
               <h3 className="font-semibold text-lg">{step.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
