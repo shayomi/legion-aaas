@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 
-export const metadata = { title: "Integrations — AAAS Docs" };
+export const metadata = { title: "Integrations — LEGION Docs" };
 
 const integrations = [
   {
@@ -41,7 +41,7 @@ export default function IntegrationsPage() {
         <Badge variant="outline" className="mb-4 border-primary/30 text-primary">Integrations</Badge>
         <h1 className="text-4xl font-bold mb-3">Connect your organisation</h1>
         <p className="text-lg text-muted-foreground">
-          AAAS connects to every tool your team uses. GitHub is live now.
+          LEGION connects to every tool your team uses. GitHub is live now.
           Slack, Google Meet, and CI/CD are shipping next.
         </p>
       </div>

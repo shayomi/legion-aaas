@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 
-export const metadata = { title: "GitHub Integration — AAAS Docs" };
+export const metadata = { title: "GitHub Integration — LEGION Docs" };
 
 function Code({ children }: { children: string }) {
   return (
@@ -26,7 +26,7 @@ export default function GithubIntegrationPage() {
         <Badge variant="outline" className="mb-4 border-emerald-500/30 text-emerald-400">Live</Badge>
         <h1 className="text-4xl font-bold mb-3">🐙 GitHub Integration</h1>
         <p className="text-lg text-muted-foreground">
-          AAAS connects deeply to GitHub — creating issues, managing project boards,
+          LEGION connects deeply to GitHub — creating issues, managing project boards,
           triggering Actions, and tracking your entire sprint lifecycle.
         </p>
       </div>
@@ -55,7 +55,7 @@ GITHUB_REPO=owner/repo-name`}</Code>
           {[
             {
               title: "Creates issues from backlog",
-              desc: "After analysing your project, every gap and suggested task becomes a GitHub issue with the aaas-generated label.",
+              desc: "After analysing your project, every gap and suggested task becomes a GitHub issue with the legion-generated label.",
               code: "uv run agent.py /your/project --github",
             },
             {
@@ -75,7 +75,7 @@ Agent: Found 12 open issues...`,
         </div>
 
         <Callout type="tip">
-          Issues created by AAAS are labelled <code className="bg-muted/50 px-1 py-0.5 rounded">aaas-generated</code> and <code className="bg-muted/50 px-1 py-0.5 rounded">backlog</code> so your team can filter them easily.
+          Issues created by LEGION are labelled <code className="bg-muted/50 px-1 py-0.5 rounded">legion-generated</code> and <code className="bg-muted/50 px-1 py-0.5 rounded">backlog</code> so your team can filter them easily.
         </Callout>
       </div>
     </article>

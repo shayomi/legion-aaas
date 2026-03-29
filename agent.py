@@ -1,13 +1,13 @@
 """
-agent.py - AAAS main entry point.
+agent.py - LEGION main entry point.
 Run with:  uv run agent.py [path/to/your/project]
 
 What it does:
   1. Reads your project files
   2. Stores them in local vector memory
-  3. Detects recommended AAAS packs
+  3. Detects recommended LEGION packs
   4. Asks the LLM to generate legion.md
-  5. Updates primer.md and starter workflow docs
+  5. Updates primer.md, starter workflow docs, and the skill library
   6. Optionally pushes backlog items to GitHub issues
 """
 
@@ -27,6 +27,7 @@ from aaas.artifacts import build_legion_prompt, update_primer, write_legion
 from aaas.packs import detect_recommended_packs, install_packs, resolve_pack_names
 from aaas.project_config import write_project_config, write_sync_model
 from aaas.providers import provider_ready
+from aaas.swarm import write_swarm_artifacts
 from aaas.workflows import ensure_workflow_docs
 
 console = Console()
@@ -47,8 +48,8 @@ def selected_packs_from_env(
 def header():
     console.print(
         Panel.fit(
-            "[bold cyan]AAAS — Agent as a Service[/bold cyan]\n"
-            "[dim]Reads your project. Writes skills. Keeps it going.[/dim]",
+            "[bold cyan]LEGION[/bold cyan]\n"
+            "[dim]Learns your repo. Writes memory. Installs skills.[/dim]",
             border_style="cyan",
         )
     )
@@ -122,14 +123,16 @@ def run(project_folder: str, push_to_github: bool = False):
         legion_content = llm.ask(prompt)
 
     # --- Step 5: Write artifacts ---
-    console.print("[cyan]5/5  Writing AAAS artifacts...[/cyan]")
+    console.print("[cyan]5/5  Writing LEGION artifacts...[/cyan]")
     installed_pack_paths, unknown_installed = install_packs(
         project_root, selected_packs
     )
+    installed_skill_paths = skills.install_skill_library(project_root)
     config_path = write_project_config(project_root, selected_packs)
     sync_path = write_sync_model(project_root)
     legion_path = write_legion(project_root, legion_content)
     workflow_paths = ensure_workflow_docs(project_root)
+    swarm_paths = write_swarm_artifacts(project_root, project_data["files"])
     primer_path = update_primer(
         project_root,
         project_summary=project_data["summary"],
@@ -142,6 +145,11 @@ def run(project_folder: str, push_to_github: bool = False):
                 path.relative_to(project_root).as_posix()
                 for path in installed_pack_paths
             ),
+            *(
+                path.relative_to(project_root).as_posix()
+                for path in installed_skill_paths
+            ),
+            *(path.relative_to(project_root).as_posix() for path in swarm_paths),
             *(path.name for path in workflow_paths),
         ],
     )
@@ -155,6 +163,16 @@ def run(project_folder: str, push_to_github: bool = False):
         console.print(
             "     [green]✓ Installed pack registry:[/green] "
             f"{', '.join(path.relative_to(project_root).as_posix() for path in installed_pack_paths)}"
+        )
+    if installed_skill_paths:
+        console.print(
+            "     [green]✓ Installed skill library:[/green] "
+            f"{len([path for path in installed_skill_paths if path.suffix == '.md'])} markdown files"
+        )
+    if swarm_paths:
+        console.print(
+            "     [green]✓ Generated LEGION Swarm artifacts:[/green] "
+            f"{', '.join(path.relative_to(project_root).as_posix() for path in swarm_paths)}"
         )
     if workflow_paths:
         console.print(

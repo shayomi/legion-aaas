@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const LINES = [
   { text: "$ uv run agent.py ./my-startup", type: "cmd" },
   { text: "", type: "blank" },
-  { text: "╭─ AAAS — Agent as a Service ──────────╮", type: "border" },
+  { text: "╭─ LEGION ────────────────────────────╮", type: "border" },
   { text: "│  Reads your project. Writes skills.  │", type: "border" },
   { text: "╰──────────────────────────────────────╯", type: "border" },
   { text: "", type: "blank" },

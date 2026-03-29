@@ -32,7 +32,7 @@ const features = [
   {
     icon: FileCode2,
     title: "Repo-owned artifacts",
-    desc: "AAAS writes legion.md for architecture intelligence and primer.md for rolling operational memory directly into the repo.",
+    desc: "LEGION writes legion.md for architecture intelligence and primer.md for rolling operational memory directly into the repo.",
     color: "text-emerald-400",
     bg: "bg-emerald-400/10",
   },
@@ -46,14 +46,14 @@ const features = [
   {
     icon: Cpu,
     title: "Provider-flexible runtime",
-    desc: "Start with Ollama locally today, then switch per project to Claude, OpenCode, or OpenAI-compatible providers as AAAS grows.",
+    desc: "Start with Ollama locally today, then switch per project to Claude, OpenCode, or OpenAI-compatible providers as LEGION grows.",
     color: "text-pink-400",
     bg: "bg-pink-400/10",
   },
   {
     icon: Workflow,
-    title: "Pack registry + workflows",
-    desc: "Installable packs cover frontend, database, auth, AI, payments, testing, storage, and infra, with workflow docs generated on first run.",
+    title: "150+ skills + workflow docs",
+    desc: "LEGION emits a broad local skill library covering CI/CD, workflows, n8n, Zapier, Framer, Remotion, charts, auth, testing, databases, and more.",
     color: "text-yellow-400",
     bg: "bg-yellow-400/10",
   },

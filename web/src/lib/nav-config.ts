@@ -20,6 +20,10 @@ export const navConfig: { items: NavItem[] } = {
       href: "/docs/skills",
     },
     {
+      title: "Swarm",
+      href: "/docs/swarm",
+    },
+    {
       title: "Configuration",
       href: "/docs/configuration",
     },

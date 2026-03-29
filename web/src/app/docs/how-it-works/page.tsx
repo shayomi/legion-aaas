@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 
-export const metadata = { title: "How It Works — AAAS Docs" };
+export const metadata = { title: "How It Works — LEGION Docs" };
 
 function Code({ children }: { children: string }) {
   return (
@@ -17,7 +17,7 @@ export default function HowItWorksPage() {
         <Badge variant="outline" className="mb-4 border-primary/30 text-primary">Architecture</Badge>
         <h1 className="text-4xl font-bold mb-3">How It Works</h1>
         <p className="text-lg text-muted-foreground">
-          A walkthrough of the read → store → analyse → automate loop that powers AAAS.
+          A walkthrough of the read → store → analyse → install → automate loop that powers LEGION.
         </p>
       </div>
 
@@ -34,8 +34,8 @@ export default function HowItWorksPage() {
           <div className="text-cyan-400 mt-2">llm.py (Ollama / Mistral)</div>
           <div className="text-muted-foreground pl-4">└── receives project summary + prompt</div>
           <div className="text-muted-foreground pl-4">└── analyses stack, finds gaps, writes backlog</div>
-          <div className="text-cyan-400 mt-2">skills.py</div>
-          <div className="text-muted-foreground pl-4">└── writes analysis to skills/system-overview.md</div>
+          <div className="text-cyan-400 mt-2">skills.py + skill_library.py</div>
+          <div className="text-muted-foreground pl-4">└── writes the generated skill library to .legion/skills/ and skills/</div>
           <div className="text-cyan-400 mt-2">github_tools.py</div>
           <div className="text-muted-foreground pl-4">└── creates GitHub issues from backlog</div>
           <div className="text-muted-foreground pl-4">└── labels + assigns to project board</div>
@@ -58,15 +58,20 @@ export default function HowItWorksPage() {
 
         <h2 className="text-2xl font-bold border-b border-border pb-3 pt-4">The skills system</h2>
         <p className="text-muted-foreground">
-          Every insight the agent produces is a markdown file in <code className="bg-muted px-1.5 py-0.5 rounded text-xs">skills/</code>.
-          Skills are version-controlled alongside your code, readable by humans,
-          and loaded back into context on every subsequent run — so knowledge compounds.
+          LEGION now emits a mirrored local skill library to <code className="bg-muted px-1.5 py-0.5 rounded text-xs">skills/</code>
+          and <code className="bg-muted px-1.5 py-0.5 rounded text-xs">.legion/skills/</code>.
+          Those markdown skills are readable by humans and loaded back into context on future runs.
         </p>
         <Code>{`skills/
-├── system-overview.md    ← generated on first run
-├── feature-payments.md   ← task-specific skill
-├── bug-rate-limiting.md  ← bug investigation
-└── how-to-use.md         ← bootstrap (written by humans)`}</Code>
+├── index.json
+├── cicd.md
+├── workflows.md
+├── n8n.md
+├── zapier.md
+├── remotion.md
+├── echarts.md
+├── playwright.md
+└── ... 150+ generated skills`}</Code>
       </div>
     </article>
   );

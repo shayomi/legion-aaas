@@ -12,7 +12,7 @@ const tabs = [
     code: `# 1. Install Ollama (download from ollama.com)
 ollama pull mistral
 
-# 2. Clone AAAS
+# 2. Clone LEGION
 git clone https://github.com/shayomi/legion-aaas
 cd legion-aaas
 
@@ -31,7 +31,8 @@ uv run agent.py /path/to/your/project
 #  ✓ Read all files (code, docs, configs)
 #  ✓ Store in local vector memory
 #  ✓ Write legion.md and primer.md
-#  ✓ Create .legion/config.json and pack manifests
+#  ✓ Create .legion/config.json and .legion/skills
+#  ✓ Install 150+ local skill markdown files
 
 # With GitHub integration (add token to .env first)
 uv run agent.py /path/to/project --github
@@ -44,7 +45,7 @@ uv run agent.py /path/to/project --github
     lang: "bash",
     code: `uv run chat.py
 
-# AAAS Chat
+# LEGION Chat
 # Commands: 'skills' | 'packs' | 'quit'
 # Loaded local artifacts: legion.md, primer.md
 
@@ -68,7 +69,7 @@ GitHub issues #12-#15 have been created for these.`,
 _Last updated: 2026-03-28_
 
 ## What this repo is
-Hybrid AAAS runtime plus hosted control plane starter.
+Hybrid LEGION runtime plus hosted control plane starter.
 
 ## Recommended packs
 - nextjs

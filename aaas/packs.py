@@ -242,7 +242,7 @@ def install_packs(root: str | Path, names: list[str]) -> tuple[list[Path], list[
             f"- Aliases: {', '.join(pack.aliases) if pack.aliases else 'none'}\n"
             f"- Summary: {pack.summary}\n\n"
             "## Install intent\n"
-            "- This pack was selected by AAAS for this repository.\n"
+            "- This pack was selected by LEGION for this repository.\n"
             "- Use it as the local contract for future SaaS sync and automation.\n"
         )
         path.write_text(content, encoding="utf-8")

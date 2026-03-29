@@ -1,5 +1,5 @@
 """
-workflows.py - Starter workflow document generators for AAAS.
+workflows.py - Starter workflow document generators for LEGION.
 """
 
 from pathlib import Path

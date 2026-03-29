@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 
-export const metadata = { title: "Configuration — AAAS Docs" };
+export const metadata = { title: "Configuration — LEGION Docs" };
 
 function Code({ children }: { children: string }) {
   return (
@@ -19,7 +19,7 @@ const envVars = [
   { key: "OPENAI_BASE_URL", default: "—", desc: "Base URL for any OpenAI-compatible provider." },
   { key: "AAAS_PACKS", default: "auto", desc: "Comma-separated pack aliases to install instead of automatic recommendations." },
   { key: "AAAS_SYNC_MODE", default: "hybrid", desc: "Controls whether the repo expects hybrid SaaS sync metadata." },
-  { key: "AAAS_CLOUD_URL", default: "—", desc: "Hosted AAAS control plane URL." },
+  { key: "AAAS_CLOUD_URL", default: "—", desc: "Hosted LEGION control plane URL." },
   { key: "AAAS_PROJECT_ID", default: "—", desc: "Cloud project identifier used for sync." },
   { key: "AAAS_WORKSPACE_ID", default: "—", desc: "Cloud workspace identifier used for sync." },
   { key: "GITHUB_TOKEN", default: "—", desc: "Personal access token. Scopes: repo, workflow. Required for GitHub features." },
@@ -63,7 +63,7 @@ export default function ConfigurationPage() {
 
       <div>
         <h2 className="text-xl font-bold mb-4 border-b border-border pb-3">Full .env.example</h2>
-        <Code>{`# AAAS - Agent as a Service
+        <Code>{`# LEGION runtime settings
 
 # Provider selection
 AI_PROVIDER=ollama

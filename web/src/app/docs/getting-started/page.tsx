@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 
 export const metadata = {
-  title: "Getting Started — AAAS Docs",
+  title: "Getting Started — LEGION Docs",
 };
 
 function Step({ n, title, children }: { n: number; title: string; children: React.ReactNode }) {
@@ -44,9 +44,9 @@ export default function GettingStartedPage() {
     <article className="prose-invert max-w-none space-y-2">
       <div className="mb-8">
         <Badge variant="outline" className="mb-4 border-primary/30 text-primary">Getting Started</Badge>
-        <h1 className="text-4xl font-bold mb-3">Install AAAS in 5 minutes</h1>
+        <h1 className="text-4xl font-bold mb-3">Install LEGION in 5 minutes</h1>
         <p className="text-lg text-muted-foreground">
-          From zero to a hybrid AAAS setup: local repo intelligence,
+          From zero to a hybrid LEGION setup: local repo intelligence,
           rolling memory, installable packs, workflow docs, and a hosted control plane.
         </p>
       </div>
@@ -82,9 +82,9 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | iex"`}</Code>
           <p className="text-sm text-muted-foreground">Restart your terminal after installing.</p>
         </Step>
 
-        <Step n={3} title="Clone & install AAAS">
-          <Code>{`git clone https://github.com/yourusername/aaas
-cd aaas
+        <Step n={3} title="Clone & install LEGION">
+          <Code>{`git clone https://github.com/shayomi/legion-aaas
+cd legion-aaas
 uv sync`}</Code>
           <p className="text-sm text-muted-foreground">
             That&apos;s it — <code className="bg-muted px-1 py-0.5 rounded text-xs">uv sync</code> installs all Python dependencies automatically.
@@ -100,7 +100,7 @@ uv run agent.py .`}</Code>
             In ~30 seconds you&apos;ll see <code className="bg-muted px-1 py-0.5 rounded text-xs">legion.md</code>,
             <code className="bg-muted px-1 py-0.5 rounded text-xs">primer.md</code>,
             <code className="bg-muted px-1 py-0.5 rounded text-xs">.legion/config.json</code>,
-            and starter workflow docs appear.
+            starter workflow docs, and LEGION Swarm artifacts appear.
           </p>
         </Step>
 
@@ -111,9 +111,9 @@ AAAS_PACKS=nextjs,react,tailwind,shadcn,supabase
 # Optional: switch provider later
 AI_PROVIDER=claude`}</Code>
           <p className="text-sm text-muted-foreground">
-            AAAS auto-detects packs from the repo, but you can pin them with
+            LEGION auto-detects packs from the repo, but you can pin them with
             <code className="bg-muted px-1 py-0.5 rounded text-xs">AAAS_PACKS</code>.
-            Installed pack manifests are written under <code className="bg-muted px-1 py-0.5 rounded text-xs">.legion/packs/</code>.
+            Installed pack manifests are written under <code className="bg-muted px-1 py-0.5 rounded text-xs">.legion/packs/</code>, and the skill library is written to both <code className="bg-muted px-1 py-0.5 rounded text-xs">.legion/skills/</code> and <code className="bg-muted px-1 py-0.5 rounded text-xs">skills/</code>.
           </p>
         </Step>
 
@@ -163,6 +163,9 @@ uv run agent.py /path/to/project --github`}</Code>
         </a>
         <a href="/docs/skills" className="text-primary text-sm hover:underline">
           Skills system →
+        </a>
+        <a href="/docs/swarm" className="text-primary text-sm hover:underline">
+          LEGION Swarm →
         </a>
       </div>
     </article>

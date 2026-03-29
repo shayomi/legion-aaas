@@ -1,5 +1,5 @@
 """
-providers.py - Multi-provider chat adapters for AAAS.
+providers.py - Multi-provider chat adapters for LEGION.
 """
 
 from __future__ import annotations

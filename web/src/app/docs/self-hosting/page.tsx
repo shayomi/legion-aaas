@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 
-export const metadata = { title: "Self-Hosting — AAAS Docs" };
+export const metadata = { title: "Self-Hosting — LEGION Docs" };
 
 function Code({ children }: { children: string }) {
   return (
@@ -24,15 +24,15 @@ export default function SelfHostingPage() {
     <article className="space-y-8">
       <div>
         <Badge variant="outline" className="mb-4 border-primary/30 text-primary">Self-Hosting</Badge>
-        <h1 className="text-4xl font-bold mb-3">Self-Hosting AAAS</h1>
+        <h1 className="text-4xl font-bold mb-3">Self-Hosting LEGION</h1>
         <p className="text-lg text-muted-foreground">
-          Run AAAS on a cheap VPS so your whole team can access it.
+          Run LEGION on a cheap VPS so your whole team can access it.
           Hetzner CX11 costs €4/month and runs everything fine.
         </p>
       </div>
 
       <Callout type="tip">
-        AAAS runs great locally first. Only move to a VPS when multiple team members need access.
+        LEGION runs great locally first. Only move to a VPS when multiple team members need access.
       </Callout>
 
       <div className="space-y-6">
@@ -59,9 +59,9 @@ ssh root@your-server-ip
 # Install Coolify (one command)
 curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash`}</Code>
 
-          <h3 className="font-semibold">3. Deploy AAAS</h3>
+          <h3 className="font-semibold">3. Deploy LEGION</h3>
           <p className="text-sm text-muted-foreground">
-            In the Coolify dashboard: New Application → GitHub → select your AAAS fork → deploy.
+            In the Coolify dashboard: New Application → GitHub → select your LEGION fork → deploy.
             Add your <code className="bg-muted px-1 py-0.5 rounded text-xs">.env</code> variables in the Environment section.
           </p>
         </div>
