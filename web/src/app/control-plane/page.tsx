@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 
 export const metadata = {
-  title: "Control Plane — AAAS",
+  title: "Control Plane — LEGION",
 };
 
 const sections = [
@@ -23,6 +23,10 @@ const sections = [
     title: "GitHub",
     body: "Store GitHub repo metadata, issue workflow defaults, and future repo automation settings.",
   },
+  {
+    title: "Swarm",
+    body: "Generate app analysis, regression plans, and multi-agent browser test presets for full-web QA.",
+  },
 ];
 
 export default function ControlPlanePage() {
@@ -32,10 +36,10 @@ export default function ControlPlanePage() {
         <Badge variant="outline" className="border-primary/30 text-primary">
           Hybrid Control Plane
         </Badge>
-        <h1 className="text-4xl font-bold tracking-tight">AAAS control plane starter</h1>
+        <h1 className="text-4xl font-bold tracking-tight">LEGION control plane starter</h1>
         <p className="max-w-3xl text-lg text-muted-foreground">
           This hosted surface is where users will authenticate, connect repos, manage providers,
-          enable packs, and sync configuration down to the local AAAS runtime.
+          enable packs, and sync configuration down to the local LEGION runtime.
         </p>
       </div>
 

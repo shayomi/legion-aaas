@@ -38,7 +38,7 @@ export function SiteHeader() {
           <div className="flex h-7 w-7 items-center justify-center rounded bg-primary text-primary-foreground transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
             <Zap className="h-4 w-4" />
           </div>
-          <span className="text-primary transition-transform duration-300 group-hover:translate-x-0.5">AAAS</span>
+          <span className="text-primary transition-transform duration-300 group-hover:translate-x-0.5">LEGION</span>
         </Link>
 
         {/* Desktop nav */}

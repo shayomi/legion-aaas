@@ -1,1 +1,1 @@
-# AAAS - Agent as a Service
+# LEGION runtime

@@ -1,7 +1,7 @@
 # legion-aaas
-# AAAS / Legion
+# LEGION
 
-AAAS is a hybrid repo-aware AI build agent.
+LEGION is a hybrid repo-aware AI build agent.
 
 - Local runtime scans a codebase, writes `legion.md`, maintains `primer.md`, and installs pack manifests in `.legion/packs/`.
 - Hosted control plane manages projects, providers, packs, GitHub settings, and future team sync.
@@ -22,6 +22,9 @@ uv run chat.py
 - `.legion/config.json`
 - `.legion/sync.json`
 - `.legion/packs/index.json`
+- `.legion/skills/index.json`
+- `.legion/swarm/app_analysis.md`
+- `.legion/swarm/regression_plan.md`
 - workflow docs like `brainstorm.md`, `prd.md`, `design_spec.md`, `technical_spec.md`, `build_e2e.md`, `github_issue.md`
 
 ## Web app
@@ -31,4 +34,4 @@ npm --prefix web install
 npm --prefix web run dev
 ```
 
-The hosted app lives in `web/` and is intended to become the AAAS control plane.
+The hosted app lives in `web/` and is intended to become the LEGION control plane.

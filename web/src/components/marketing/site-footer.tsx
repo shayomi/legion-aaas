@@ -12,11 +12,11 @@ export function SiteFooter() {
               <div className="flex h-6 w-6 items-center justify-center rounded bg-primary text-primary-foreground">
                 <Zap className="h-3.5 w-3.5" />
               </div>
-              <span className="text-primary">AAAS</span>
+              <span className="text-primary">LEGION</span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Open-source AI agent for SMEs. Learns your system, automates
-              your workflow, connects your organisation.
+              Open-source hybrid repo agent. Learns your system, writes memory,
+              installs skills, and coordinates your workflow.
             </p>
             <p className="text-xs text-muted-foreground">MIT License</p>
           </div>
@@ -65,7 +65,7 @@ export function SiteFooter() {
 
         <div className="mt-8 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-2">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} AAAS. Open source under MIT license.
+            © {new Date().getFullYear()} LEGION. Open source under MIT license.
           </p>
           <p className="text-xs text-muted-foreground">
             Built for SMEs who move fast and ship things that matter.

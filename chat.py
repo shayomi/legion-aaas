@@ -33,7 +33,7 @@ def chat_prompt(question: str, context_chunks: list[str]) -> str:
         if context_chunks
         else "No project loaded yet."
     )
-    return f"""You are AAAS, an expert agent that knows this project inside out.
+    return f"""You are LEGION, an expert repo agent that knows this project inside out.
 Answer the user's question using only the project context below.
 Be specific, cite file names, and be honest if something is unclear.
 
@@ -48,7 +48,7 @@ Answer:"""
 def main():
     console.print(
         Panel.fit(
-            "[bold cyan]AAAS Chat[/bold cyan]\n"
+            "[bold cyan]LEGION Chat[/bold cyan]\n"
             "[dim]Ask anything about your project.[/dim]\n"
             "[dim]Commands: 'skills' | 'packs' | 'quit'[/dim]",
             border_style="cyan",

@@ -18,7 +18,7 @@ export default function DocsLayout({
             <div className="flex h-6 w-6 items-center justify-center rounded bg-primary text-primary-foreground">
               <Zap className="h-3.5 w-3.5" />
             </div>
-            <span className="text-primary">AAAS</span>
+            <span className="text-primary">LEGION</span>
             <span className="text-muted-foreground font-normal">/</span>
             <span className="text-sm font-medium">Docs</span>
           </Link>

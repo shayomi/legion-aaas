@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 
-export const metadata = { title: "Discord Integration — AAAS Docs" };
+export const metadata = { title: "Discord Integration — LEGION Docs" };
 
 export default function DiscordPage() {
   return (
@@ -11,7 +11,7 @@ export default function DiscordPage() {
         </Badge>
         <h1 className="mb-3 text-4xl font-bold">Discord Integration</h1>
         <p className="text-lg text-muted-foreground">
-          AAAS will support Discord notifications, slash-command triggers, team task routing,
+          LEGION will support Discord notifications, slash-command triggers, team task routing,
           and shared project updates for engineering communities.
         </p>
       </div>

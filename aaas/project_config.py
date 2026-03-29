@@ -1,5 +1,5 @@
 """
-project_config.py - Project-local AAAS configuration.
+project_config.py - Project-local LEGION configuration.
 """
 
 from __future__ import annotations

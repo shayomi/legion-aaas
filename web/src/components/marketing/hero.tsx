@@ -31,8 +31,8 @@ export function Hero() {
 
             <Reveal delayMs={150}>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-                AAAS plugs into any codebase, learns it, writes `legion.md`
-                and `primer.md`, installs stack-specific packs, and lets teams
+                LEGION plugs into any codebase, learns it, writes `legion.md`
+                and `primer.md`, installs stack-specific packs plus a 150+ skill library, and lets teams
                 manage providers, projects, and GitHub workflows from a hosted control plane.
               </p>
             </Reveal>
@@ -67,7 +67,7 @@ export function Hero() {
             <Reveal delayMs={300} className="flex gap-8 pt-4 border-t border-border">
               {[
                 { label: "Artifacts", value: "2" },
-                { label: "Pack catalog", value: "40+" },
+                { label: "Skill library", value: "150+" },
                 { label: "Providers", value: "4" },
                 { label: "Setup time", value: "5 min" },
               ].map((stat) => (

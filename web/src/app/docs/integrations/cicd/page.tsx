@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-export const metadata = { title: "CI/CD Integration — AAAS Docs" };
+export const metadata = { title: "CI/CD Integration — LEGION Docs" };
 export default function CicdPage() {
   return (
     <article className="space-y-6">

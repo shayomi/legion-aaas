@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-export const metadata = { title: "Google Meet Integration — AAAS Docs" };
+export const metadata = { title: "Google Meet Integration — LEGION Docs" };
 export default function GoogleMeetPage() {
   return (
     <article className="space-y-6">

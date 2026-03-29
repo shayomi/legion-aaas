@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-export const metadata = { title: "Slack Integration — AAAS Docs" };
+export const metadata = { title: "Slack Integration — LEGION Docs" };
 export default function SlackPage() {
   return (
     <article className="space-y-6">

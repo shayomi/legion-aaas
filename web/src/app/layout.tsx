@@ -14,13 +14,13 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "AAAS — Agent as a Service",
+  title: "LEGION",
   description:
-    "An open-source AI agent that plugs into any codebase, learns your system, automates your workflow, and connects your entire organisation — GitHub, Slack, Google Meet, CI/CD and more.",
+    "An open-source hybrid repo agent that learns your system, writes local memory, installs a broad skill library, and connects your workflow through a hosted control plane.",
   keywords: ["AI agent", "DevOps automation", "GitHub automation", "open source", "SME"],
   openGraph: {
-    title: "AAAS — Agent as a Service",
-    description: "Open-source AI agent for your entire dev workflow.",
+    title: "LEGION",
+    description: "Open-source hybrid repo agent for your entire build workflow.",
     type: "website",
   },
 };
